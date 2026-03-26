@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhagyashree Nyamaji | Portfolio</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #6366f1;
+      --accent: #38bdf8;
+      --dark: #020617;  
+      --card: #1e293b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #020617, #0f172a);
+      color: #e5e7eb;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(2, 6, 23, 0.9);
+      backdrop-filter: blur(8px);
+      padding: 15px;
+      text-align: center;
+      z-index: 100;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: radial-gradient(circle at top, var(--primary), #020617 70%);
+      padding: 120px 20px;
+    }
+
+    .profile-pic {
+      width: 165px;
+      height: 165px;
+      border-radius: 50%;
+      border: 5px solid var(--accent);
+      margin-bottom: 22px;
+      object-fit: cover;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #c7d2fe;
+    }
+
+    .btn {
+      margin-top: 25px;
+      display: inline-block;
+      padding: 14px 36px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+    }
+
+    section {
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2.3rem;
+      margin-bottom: 35px;
+    }
+
+    .about-box {
+      max-width: 850px;
+      margin: auto;
+      padding: 45px;
+      border-radius: 25px;
+      background: rgba(30, 41, 59, 0.85);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .about-box p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .about-tags span {
+      display: inline-block;
+      margin: 12px 8px;
+      padding: 9px 22px;
+      border-radius: 25px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      font-size: 0.9rem;
+    }
+
+    .skills-grid {
+      max-width: 800px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+
+    @media(max-width:900px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:900px) {
+      .skills-grid {
+        flex-wrap: wrap;
+      }
+    }
+
+    .skill-box {
+      background: rgba(30, 41, 59, 0.85);
+      padding: 25px 20px;
+      border-radius: 20px;
+      transition: 0.4s;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+      min-width: 140px;
+    }
+
+    .skill-box i {
+      font-size: 42px;
+      color: var(--accent);
+    }
+
+    .skill-box p {
+      margin-top: 12px;
+      font-weight: 600;
+    }
+
+    .skill-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(56, 189, 248, 0.35);
+    }
+
+    .card {
+      max-width: 720px;
+      margin: 25px auto;
+      padding: 30px;
+      border-radius: 20px;
+      background: rgba(30, 41, 59, 0.85);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    a.cert-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a.cert-link:hover {
+      text-decoration: underline;
+    }
+
+    #contact-box {
+      max-width: 600px;
+      margin: auto;
+      padding: 40px;
+      background: rgba(30, 41, 59, 0.85);
+      border-radius: 25px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    #contact-box p {
+      margin: 15px 0;
+      font-size: 1.05rem;
+    }
+
+    #contact-box i {
+      margin-right: 10px;
+      color: var(--accent);
+    }
+
+    #contact-box a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    #contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #020617;
+      padding: 25px;
+      text-align: center;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#cert">Certificates</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header id="home">
+    <img src="bhagyaImg.jpg" class="profile-pic">
+    <h1>Bhagyashree Nyamaji</h1>
+    <p>Java Full Stack Developer</p>
+    <a class="btn" href="BhagyaNyamaji.pdf">Download Resume</a>
+    <br>
+
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-box">
+      <p>
+        Motivated Java Full Stack Developer with strong knowledge of Core Java, Spring Boot, and web technologies.
+        Skilled in REST API development, SQL databases, and building scalable applications.
+      </p>
+      <div class="about-tags">
+        <span>Java Developer</span>
+        <span>Full Stack Developer</span>
+        <span>Problem Solver</span>
+        <span>Quick Learner</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-box"><i class="fa-brands fa-java"></i>
+        <p>Java</p>
+      </div>
+      <div class="skill-box"><i class="fa-solid fa-database"></i>
+        <p>SQL</p>
+      </div>
+      <div class="skill-box"><i class="fa-brands fa-html5"></i>
+        <p>HTML</p>
+      </div>
+      <div class="skill-box"><i class="fa-brands fa-css3-alt"></i>
+        <p>CSS</p>
+      </div>
+      <div class="skill-box"><i class="fa-brands fa-js"></i>
+        <p>JavaScript</p>
+      </div>
+      <div class="skill-box"><i class="fa-brands fa-react"></i>
+        <p>React</p>
+      </div>
+      <div class="skill-box">
+        <i class="fa-solid fa-database"></i>
+        <p>JDBC</p>
+      </div>
+
+      <div class="skill-box">
+        <i class="fa-solid fa-layer-group"></i>
+        <p>Hibernate</p>
+      </div>
+
+      <div class="skill-box">
+        <i class="fa-solid fa-server"></i>
+        <p>Servlet</p>
+      </div>
+
+      <div class="skill-box">
+        <i class="fa-solid fa-leaf"></i>
+        <p>Spring</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>E-Commerce Application</h3>
+      <p>Spring Boot backend with JWT authentication, CRUD operations, and REST APIs.</p>
+    </div>
+    <div class="card">
+      <h3>ESP32 Voice Assistant</h3>
+      <p>Voice-to-voice assistant integrated with ChatGPT using IoT.</p>
+    </div>
+    <div class="card">
+      <h3>QR Code Generator</h3>
+      <p>Python-based QR generator with scanning and voice assistant integration.</p>
+    </div>
+  </section>
+
+  <section id="cert">
+    <h2>Certificates</h2>
+    <div class="card">
+      <p>Google Cloud Computing – NPTEL</p>
+    </div>
+    <div class="card">
+      <p>Java Training – Besant Technologies</p>
+    </div>
+    <div class="card">
+      <p>AI Certification – Honeywell & ICT Academy</p>
+    </div>
+    <div class="card">
+      <p>TCS iON Career Edge</p>
+    </div>
+  </section>
+
+
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div id="contact-box">
+      <p><i class="fa-solid fa-envelope"></i>bhagyanyamaji@gmail.com</p>
+      <p><i class="fa-solid fa-phone"></i>7090053714</p>
+      <p><i class="fa-brands fa-linkedin"></i>
+        <a href="http://www.linkedin.com/in/bhagyashree-nyamaji-59615827a" target="_blank">LinkedIn</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Bhagyashree Nyamaji</p>
+  </footer>
+
+</body>
+
+</html>
